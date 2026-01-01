@@ -4,6 +4,10 @@ export class CreateUserDto {
     @IsNotEmpty({ message: 'Name should not be empty' })
     name:string;
 
+    @IsString()
+    @IsNotEmpty({ message: 'Name should not be empty' })
+    username:string;
+    
     @IsEmail({},{ message: 'Please provide valid email' })
     @IsNotEmpty()
     email:string;
