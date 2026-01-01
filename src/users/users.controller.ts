@@ -14,7 +14,7 @@ export class UsersController {
 
   @Get()
   findAll(@Query('role') role?:'ADMIN' | 'USER' | 'CUSTOMER' | 'AGENT' | 'INFOSEEK') {
-    return this.usersService.findAll();
+    return this.usersService.findAll(role);
   }
 
   @Get(':id')
