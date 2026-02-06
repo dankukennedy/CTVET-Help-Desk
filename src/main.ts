@@ -13,10 +13,10 @@ async function bootstrap() {
   // }));
 
   const config = new DocumentBuilder()
-    .setTitle('Users example')
-    .setDescription('The users API description')
+    .setTitle('CTVET Help Desk API')
+    .setDescription('The Help Desk API description')
     .setVersion('1.0')
-    .addTag('users')
+    .addTag('HelpDesk')
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, documentFactory);
