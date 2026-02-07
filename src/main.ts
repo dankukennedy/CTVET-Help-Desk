@@ -16,7 +16,7 @@ async function bootstrap() {
     .setTitle('CTVET Help Desk API')
     .setDescription('The Help Desk API description')
     .setVersion('1.0')
-    .addTag('HelpDesk')
+    .addTag('Help Desk')
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, documentFactory);
