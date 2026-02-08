@@ -1,6 +1,8 @@
 #################################################
 #Stage 1: Build the application
 FROM node:20-alpine AS builder
+# Install openssl for Prisma
+RUN apk add --no-cache openssl
 
 WORKDIR /app
 
@@ -35,7 +37,8 @@ COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/prisma ./prisma
 # Crucial: Copy your custom generated prisma folder
-COPY --from=builder /app/generated ./generated
+#COPY --from=builder /app/generated ./generated
+COPY --from=builder /app/src/prisma/generated ./src/prisma/generated
 
 EXPOSE 3000
 
@@ -43,3 +46,7 @@ CMD ["node", "dist/main"]
 
 
 #########################################################
+
+
+
+
